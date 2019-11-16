@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 3em;
+        }
+    </style>
+    <title>URL Shortener</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content here -->
+        <h1>URL Shortener </h1>
+        <p>URL Shortener is a URL shortening service built using the services powered by Amazon Web Services. URL Shortener was designed and implemented in microservice architecuture style.</p>
+
+        <p>To use URL Shortener, input a URL and click 'Shorten' button to get the shortened URL.</p>
+        <div class="container-fluid">
+            <form data-bind="submit: shortenUrl">
+                <div class="form-group">
+                    <textarea data-bind="textInput: url" class="form-control" placeholder="Shorten your link" rows="2" id="url"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" data-bind="enable: url().length >1 ">Shorten</button>
+                <button type="button" class="btn btn-primary" data-bind="click: clearInput">Clear</button>
+
+            </form>
+        </div>
+        <p>
+            <div class="alert alert-primary" role="alert" data-bind="text: status, visible: status().length > 0">
+            </div>
+        </p>
+        <p>
+            <div class="alert alert-dark" role="alert" data-bind="visible: shortUrl().length > 0">
+                <a target="_blank" data-bind="attr: { href: shortUrl }"><span data-bind="text: shortUrl"></span></a>
+            </div>
+        </p>
+    </div>
+    <footer class="page-footer font-small cyan darken-3">
+        <div class="container">
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="https://www.linkedin.com/in/congtao-jiang-27155a9/"> Nick Jiang &lt;congtao.jiang@outlook.com&gt;                 
+                </congtao.jiang></a>
+            </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js'></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

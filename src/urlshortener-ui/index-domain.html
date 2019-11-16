@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            margin-top: 3em;
+        }
+    </style>
+    <title>Configure Custom Domain</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content here -->
+        <h1>URL Shortener </h1>
+        <h2>Configure Custom Domain</h2>
+        <p>Specify the fully-qualified custom domain for <b>URL Shortener</b>. The value will be used as base url part of shortened URL produced by <b>URL Shortener</b> service. In order for shortened URL redirection to work, It should usually be configured
+            correctly at your DNS service provider and integrated with this <b>URL Shortener</b> service backend. Example syntax may look like (no quote): <i class="text-monospace">'https://h919hqbhel.execute-api.ap-southeast-1.amazonaws.com/njdev/NJRedirect-URL'</i></p>
+
+        <div class="container-fluid">
+            <form data-bind="submit: setupCustomDomain">
+                <div class="form-group">
+                    <textarea data-bind="textInput: fqdn" class="form-control" placeholder="Specify fully-qualified domain name" rows="2" id="fqdn"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" data-bind="enable: fqdn().length >1 ">Save</button>
+                <button type="button" class="btn btn-primary" data-bind="click: clearInput">Clear</button>
+                <button type="button" class="btn btn-primary" data-bind="click: getCurrentDomain">Get Current Domain</button>
+            </form>
+        </div>
+        <p>
+            <div class="alert alert-dark" role="alert" data-bind="text: status, visible: status().length > 0">
+            </div>
+        </p>
+    </div>
+
+    <footer class="page-footer font-small cyan darken-3">
+        <div class="container">
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="https://www.linkedin.com/in/congtao-jiang-27155a9/"> Nick Jiang &lt;congtao.jiang@outlook.com&gt;                 
+            </congtao.jiang></a>
+            </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js'></script>
+    <script src="app-customdomain.js"></script>
+</body>
+
+</html>
