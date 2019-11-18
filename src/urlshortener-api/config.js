@@ -7,11 +7,6 @@ var configureEnvironment = function (environment) {
         AWS.config.update({
             endpoint: "http://localhost:8000"
         });
-        // AWS.config.update({
-        //     region: "ap-southeast-1",
-        //     secretAccessKey: "cKNKrIwbrV0SC8+mIisqcgAuyR5+osr81563UIto",
-        //     accessKeyId: "AKIA5KYVIGTDEBD3JMYO"
-        // });
     }
 }
 
